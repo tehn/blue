@@ -51,6 +51,7 @@ function init()
 	params:set("rev_low_time",16)
 	params:set("rev_mid_time",8)
 	params:set("rev_hf_damping",10000)
+	params:set("reverb",10)
 
 	t = 0
 	intro = true
@@ -130,4 +131,8 @@ function print_info(file)
 		print("  sample rate:\t"..samplerate.."hz")
 		print("  duration:\t"..duration.." sec")
 	else print "read_wav(): file not found" end
+end
+
+function cleanup()
+	params:set("rev_return_level",0)
 end
